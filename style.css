@@ -63,12 +63,3 @@ nav {
     margin: 0 12px;
     font-weight: bold;
 }
-
-/* Introduction */
-
-.introduction__image {
-    display: flex;
-    margin: 0 auto;
-    border-radius: 50%;
-    padding: 30px 0;
-}
