@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Universal Styling */
+
 * {
     font-family: "Lato", sans-serif;
     padding: 0;
@@ -13,6 +15,10 @@ h1, h2, h3, h4, h5, h6, span {
     line-height: 1.25;
 }
 
+h1 {
+    font-size: 36px;
+}
+
 p {
     line-height: 1.5;
     font-size: 16px;
@@ -22,7 +28,37 @@ li {
     list-style: none;
 }
 
-/* NAVIGATION BAR */
+.flex {
+    display: flex;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.container {
+    padding: 50px 0;
+}
+
+.row {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.text--blue {
+    color: #0004ff;
+}
+
+section:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+.section__title {
+    margin-bottom: 20px;
+}
+
+/* Navigation Bar */
 
 nav {
     height: 100px;
@@ -63,3 +99,126 @@ nav {
     margin: 0 12px;
     font-weight: bold;
 }
+
+/* About Me */
+
+#about-me {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-me__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-me__info--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-me__picture--mask {
+    width: 100px;
+    height: 100px; 
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    margin-bottom: 16px;
+}
+
+.about-me__picture {
+    width: 100%;
+}
+
+.about-me__info--title {
+    margin-bottom: 16px;
+}
+.about-me__info--paragraph {
+    font-size: 20px;
+    margin-bottom: 26px;
+}
+
+/* Links */
+
+.about-me__link {
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    padding: 0 8px;
+}
+
+.about-me__img--container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.about-me__img {
+    width: 100%;
+}
+
+/* Tech Stack */
+
+.language__img {
+    width: 100%;
+    max-width: 100px;
+    transition: all 0.35s ease;
+}
+
+.language:hover .language__img {
+    filter: brightness(80%);
+    opacity: 0.86;
+    transform: scale(0.9);
+}
+
+.language {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.language__img--container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 16px;
+}
+
+.language__list {
+    display: flex;
+    width: 100%;
+}
+
+.language__name {
+    position: absolute;
+    bottom: 0;
+    transform: scale(0);
+    transition: all 0.35s ease;
+    font-size: 20px;
+}
+
+.language:hover .language__name {
+    transform: scale(1);
+}
+
+/* Projects */
+
+.project__img {
+    width: 100%;
+}
+
+.project__container {
+    display: flex;
+    box-shadow: 0 20px 80px rgba(0,0,0,0.4);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* 41:45 */
