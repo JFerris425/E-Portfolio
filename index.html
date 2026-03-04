@@ -6,12 +6,28 @@
     <title>Jacob Ferris E-Portfolio</title>
     <link rel="stylesheet" href="style.css" />
     <script src="app.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/21bac0c4a1.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "Ir5ArnzeYtZIcZewh",
+      });
+   })();
+  </script>
   </head>
+
   <body>
-    <section id="landing__page">
+    <section id="landing-page">
       <nav>
         <figure>
-          <img src="" alt="" />
+          <img id="personal-logo" src="assets/ferris-logo.png" alt="" />
         </figure>
         <ul class="nav__link--list">
           <li class="nav__link">
@@ -23,7 +39,7 @@
           </li>
           <li class="nav__link">
             <a
-              href="#"
+              href="#projects"
               class="nav__link--anchor link__hover-effect link__hover-effect--black"
               >Projects</a
             >
@@ -35,8 +51,196 @@
               >Contact</a
             >
           </li>
+          <li class="nav__link click">
+            <a
+              href="#"
+              class="nav__link--anchor"
+              ><i class="fa-solid fa-circle-half-stroke"></i
+            ></a>
+          </li>
         </ul>
       </nav>
+      <header class="header">
+        <div class="header__content">
+          <h1 class="title">Hey</h1>
+          <h1 class="title blue">I'm Jacob.</h1>
+          <p class="header__paragraph">
+            I am a <span class="blue bold">Frontend Software Engineer</span>. I
+            have a love for making responsive and beautiful websites/web
+            applications.
+          </p>
+          <p class="header__paragraph">
+            Here is some more information
+            <span class="bold blue">about me.</span>
+          </p>
+          <div class="social__list">
+            <a
+              href="https://github.com/JFerris425"
+              target="_blank"
+              class="social__link click"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/jacob-ferris-081b6429b/"
+              target="_blank"
+              class="social__link click"
+            >
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </header>
+      <button class="mail_btn click">
+        <i class="fa-solid fa-envelope"></i>
+      </button>
+      <a href="#projects" class="scroll">
+        <div class="scroll__icon click"></div>
+      </a>
+      <div class="modal">
+        <div class="modal__half modal__about">
+          <h3 class="modal__title modal__title--about">Here is a bit more about me.</h3>
+          <h4 class="modal__subtitle modal__subtitle--about">Frontend Software Engineer/Web Developer</h4>
+          <p class="modal__paragraph">
+            My name is Jacob. I am an 18 year old <b class="blue">Frontend Software Engineer</b> from North Carolina, USA. I am really good at problem solving. If I have a problem, then I will find a solution for that problem.
+            <br>
+             I specialize in using <b class="blue">HTML, CSS, JS, React</b>, etc. to create amazing website for users to be able to browse the web smoothly.
+          </p>
+          <div class="modal__languages">
+            <figure class="modal__language">
+              <img class="modal__language--img" src="https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg" alt="HTML5_Badge">
+              <span class="language__name">HTML</span>
+            </figure>
+            <figure class="modal__language">
+              <img class="modal__language--img" src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS LOGO">
+              <span class="language__name">CSS</span>
+            </figure>
+            <figure class="modal__language">
+              <img class="modal__language--img" src="https://upload.wikimedia.org/wikipedia/commons/b/b9/JavaScript_shield_logo_%28no_text%29.svg" alt="JavaScript LOGO">
+              <span class="language__name">Javascript</span>
+            </figure>
+            <figure class="modal__language">
+              <img class="modal__language--img" src="https://upload.wikimedia.org/wikipedia/commons/3/30/React_Logo_SVG.svg" alt="React LOGO">
+              <span class="language__name">React</span>
+            </figure>
+          </div>
+        </div>
+        <div class="modal__half modal__contact">
+          <h3 class="modal__title modal__title--contact">Let's have a chat!</h3>
+          <h4 class="modal__subtitle modal__subtitle--contact">I would love to hear from you.</h4>
+          <form id="contact__form" onsubmit="contact(event)">
+            <div class="form__item">
+              <label class="form__item--label">Name</label>
+              <input name="user_name" type="text" class="input" required></input>
+            <div class="form__item">
+              <label class="form__item--label">Email</label>
+              <input name="user_email" type="email" class="input" required></input>
+            <div class="form__item">
+              <label class="form__item--label">Message</label>
+              <textarea name="message" type="text" class="input" required></textarea>
+            </div>
+            <button id="contact__submit" class="form__submit">Send it to me</button>
+          </form>
+          <div class="modal__overlay modal__overlay--loading">
+            <i class="fa-solid fa-spinner"></i>
+          </div>
+          <div class="modal__overlay modal__overlay--success">
+            Thanks for the message! Looking forward to speaking with you soon!
+          </div>
+        </div>
+        <i class="fa-solid fa-xmark modal__exit click"></i>
+      </div>
     </section>
+    <section id="projects">
+      <div class="container">
+        <div class="row">
+          <h1 class="section__title">
+            Here are some of my <span class="blue">projects.</span>
+          </h1>
+          <ul class="project__list">
+            <li class="project">
+              <div class="project__container">
+                <img
+                  src="assets/blinker mockup.png"
+                  class="project__img"
+                  alt=""
+                />
+                <div class="project__container--background"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">Placeholder Name</h3>
+                  <h4 class="project__description--subtitle">HTML, CSS</h4>
+                  <p class="project__description--paragraph">
+                    Placeholder Description
+                  </p>
+                  <div class="project__description--links">
+                    <a href="" class="project__description--link">
+                      <i class="fa-solid fa-link"></i>
+                    </a>
+                    <a href="" class="project__description--link">
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="project">
+              <div class="project__container">
+                <img
+                  src="assets/Treact.png"
+                  class="project__img"
+                  alt=""
+                />
+                <div class="project__container--background"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">Treact</h3>
+                  <h4 class="project__description--subtitle">HTML, CSS, Javascript</h4>
+                  <p class="project__description--paragraph">
+                    I used HTML, CSS, and a little JS to recreate Treact from scratch. An almost 1 to 1 recreation.
+                  </p>
+                  <div class="project__description--links">
+                    <a href="https://jferris425.github.io/Treact-Final-Project/" target="_blank" class="project__description--link">
+                      <i class="fa-solid fa-link"></i>
+                    </a>
+                    <a href="https://github.com/JFerris425/Treact-Final-Project" target="_blank" class="project__description--link">
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="row footer__row">
+        <figure>
+          <img src="assets/ferris-logo.png" class="footer__logo--img" alt="" />
+        </figure>
+        <div class="footer__social--list">
+          <a
+            href="https://github.com/JFerris425?tab=repositories" target="_blank"
+            class="footer__social--link link__hover-effect link__hover-effect--white"
+          >
+            Github
+          </a>
+          <a
+            href="https://www.linkedin.com/in/jacob-ferris-081b6429b/" target="_blank"
+            class="footer__social--link link__hover-effect link__hover-effect--white"
+          >
+            Linkedin
+          </a>
+          <a
+            href=""
+            class="footer__social--link link__hover-effect link__hover-effect--white"
+          >
+            Contact
+          </a>
+        </div>
+        <div class="footer__copyright">Copyright © 2026 Jacob Ferris</div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
