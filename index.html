@@ -44,7 +44,7 @@
               >Projects</a
             >
           </li>
-          <li class="nav__link">
+          <li class="nav__link" onclick="toggleModal()">
             <a
               href="#"
               class="nav__link--anchor link__hover-effect link__hover-effect--black"
@@ -71,7 +71,7 @@
           </p>
           <p class="header__paragraph">
             Here is some more information
-            <span class="bold blue">about me.</span>
+            <b class="blue about__me--cursor" onclick="toggleModal()">about me.</b>
           </p>
           <div class="social__list">
             <a
@@ -91,7 +91,7 @@
           </div>
         </div>
       </header>
-      <button class="mail_btn click">
+      <button class="mail_btn click" onclick="toggleModal()">
         <i class="fa-solid fa-envelope"></i>
       </button>
       <a href="#projects" class="scroll">
@@ -148,7 +148,7 @@
             Thanks for the message! Looking forward to speaking with you soon!
           </div>
         </div>
-        <i class="fa-solid fa-xmark modal__exit click"></i>
+        <i class="fa-solid fa-xmark modal__exit click" onclick="toggleModal()"></i>
       </div>
     </section>
     <section id="projects">
