@@ -9,12 +9,17 @@
     font-family: 'Roboto', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 li {
     list-style: none;
 }
 
 section {
     background-color: rgb(245, 245, 245);
+    transition: all .3s ease;
 }
 
 p {
@@ -147,6 +152,38 @@ nav,
     transition: all .3s .1s;
 }
 
+.dark-theme .title,
+.dark-theme .section__title,
+.dark-theme .section__subtitle,
+.dark-theme .nav__link--anchor,
+.dark-theme .fa-circle-half-stroke,
+.dark-theme .header__paragraph
+{
+    color: white;
+}
+
+.dark-theme section {
+    background-color: #242424;
+}
+
+.dark-theme #personal-logo {
+    filter: invert();
+}
+
+.dark-theme .scroll__icon {
+    border-color: white;
+}
+
+.dark-theme .scroll__icon:after,
+.dark-theme .link__hover-effect--black:after {
+    background-color: white;
+}
+
+.dark-theme .mail_btn {
+    background-color: white;
+    color: #242424;
+}
+
 /* Landing Page */
 
 #landing-page {
@@ -186,6 +223,10 @@ nav,
     font-weight: bold;
 }
 
+.dark-blue {
+    color: blue;
+}
+
 .header__paragraph {
     font-size: 22px;
     line-height: 1.75;
@@ -204,9 +245,10 @@ nav,
     border: none;
     background-color: #242424;
     color: white;
-    position: absolute;
+    position: fixed;
     bottom: 32px;
     right: 40px;
+    z-index: 1000;
 }
 
 .scroll {
@@ -563,4 +605,54 @@ footer {
 .footer__social--link,
 .footer__copyright {
     color: white;
+}
+
+/* Small phones. tablets, large smart phones */
+@media (max-width: 768px) {
+    .title {
+        font-size: 80px;
+    }
+    .header__paragraph {
+        font-size: 20px;
+    }
+    .modal {
+        top: 0;
+        left: 0;
+        height: auto;
+        transform: none;
+        width: 100%;
+        flex-direction: column-reverse;
+        border-radius: -;
+    }
+    .modal__half {
+        width: 100%;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .title {
+        font-size: 52px;
+    }
+    .header__paragraph {
+        font-size: 18px;
+    }
+    .nav__link:first-child {
+        display: none
+    }
+    .project__description--paragraph {
+        display: none;
+    }
+    .project__description {
+        left: 0;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .project__description--subtitle {
+        margin-bottom: 8px;
+    }
+    .modal__half {
+        padding: 40px;
+    }
 }
